@@ -44,13 +44,10 @@ TARGET_INIT_VENDOR_LIB := libinit_find7
 TARGET_RECOVERY_FSTAB := device/oppo/find7/rootdir/etc/fstab.qcom
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := find7,find7a,X9007,X9006,FIND7
+TARGET_OTA_ASSERT_DEVICE := find7,find7a,X9007,X9006,X9076,FIND7
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/oppo/find7
-
-# External apps on SD
-TARGET_EXTERNAL_APPS = sdcard1
 
 # inherit from the proprietary version
 -include vendor/oppo/find7/BoardConfigVendor.mk

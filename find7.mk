@@ -28,6 +28,11 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     libinit_find7
 
+# LVM
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lvm/lvm:root/sbin/lvm \
+    $(LOCAL_PATH)/lvm/lvm.conf:root/lvm/etc/lvm.conf
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
@@ -70,7 +75,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     view.scroll_friction=1\
     ro.min_pointer_dur=8\
     ro.min_fling_velocity=8000\
-    ro.max_fling_velocity=16000
+    ro.max_fling_velocity=16000\
+    ro.telephony.call_ring.multiple=false \
+    ro.telephony.call_ring.delay=5000
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
