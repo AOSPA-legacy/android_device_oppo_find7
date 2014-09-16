@@ -61,6 +61,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ril.subscription.types=NV,RUIM \
     ro.telephony.ril_class=OppoRIL
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    view.scroll_friction=1\
+    ro.min_pointer_dur=8\
+    ro.min_fling_velocity=8000\
+    ro.max_fling_velocity=16000
+
 # call the proprietary setup
 $(call inherit-product-if-exists, vendor/oppo/find7/find7-vendor.mk)
 
