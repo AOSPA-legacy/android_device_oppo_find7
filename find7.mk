@@ -32,6 +32,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8974
 
+# Logo
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/logo.bin:system/logo.bin
+
 # NFC packages
 PRODUCT_PACKAGES += \
     nfc.msm8974 \
