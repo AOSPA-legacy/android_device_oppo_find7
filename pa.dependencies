@@ -24,12 +24,6 @@
         "revision":     "cm-12.0"
     },
     {
-        "remote":      "github",
-        "repository":  "AOSPA-legacy/android_frameworks_opt_connectivity",
-        "target_path": "frameworks/opt/connectivity",
-        "revision":    "lollipop"
-    },
-    {
         "remote":      "blobs",
         "repository":  "proprietary_vendor_oppo",
         "target_path": "vendor/oppo",
