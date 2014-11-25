@@ -60,17 +60,6 @@ PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 
-# Do not power down SIM card when modem is sent to Low Power Mode.
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.apm_sim_not_pwdn=1 \
-    persist.radio.eons.enabled=false
-
-# Ril
-PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
-    ril.subscription.types=NV,RUIM \
-    ro.telephony.ril_class=OppoRIL
-
 PRODUCT_PROPERTY_OVERRIDES += \
     view.scroll_friction=1\
     ro.min_pointer_dur=8\
