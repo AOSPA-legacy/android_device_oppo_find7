@@ -19,3 +19,6 @@ ro.gps.agps_provider=1
 
 # cabl is handled by the panel
 ro.qualcomm.cabl=0
+
+# Default to NuPlayer
+media.stagefright.use-awesome=false
