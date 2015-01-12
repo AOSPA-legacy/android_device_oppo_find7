@@ -26,13 +26,14 @@ BOARD_BOOTIMAGE_PARTITION_SIZE     := 16777216
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 536870912
 BOARD_PERSISTIMAGE_PARTITION_SIZE  := 33554432
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
-BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1364320256
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
+BOARD_SYSTEMIMAGE_PARTITION_SIZE   := 1073741824
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 13747929088 # 13747945472 - 16384 for crypto footer
+#BOARD_USERDATAIMAGE_PARTITION_SIZE := 3221225472
 
 # Kernel
 BOARD_CUSTOM_BOOTIMG_MK := device/oppo/find7/mkbootimg.mk
-TARGET_KERNEL_CONFIG := custom_find7_defconfig
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3 androidboot.selinux=permissive
+TARGET_KERNEL_CONFIG := cyanogenmod_find7_defconfig
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x3F ehci-hcd.park=3
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/oppo/find7/bluetooth
@@ -47,28 +48,11 @@ TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 # Audio
 AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 
-# Recovery
-RECOVERY_VARIANT := twrp
-
 # Dummy
 TARGET_RECOVERY_FSTAB := device/oppo/find7/rootdir/etc/fstab.qcom
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := FIND7,find7,find7u,find7a,find7au,find7s,find7su
-
-# TWRP specific build flags
-# Resolution set to Find 7a resolution to support unified resources
-DEVICE_RESOLUTION    := 1080x1920
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_NO_USB_STORAGE := true
-TW_INCLUDE_JB_CRYPTO := false
-TW_NO_SCREEN_BLANK := true
-TW_EXCLUDE_ENCRYPTED_BACKUPS := true
-TW_INCLUDE_L_CRYPTO := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-
-# SELinux policies
-BOARD_SEPOLICY_DIRS += device/oppo/find7/sepolicy
+TARGET_OTA_ASSERT_DEVICE := find7,find7s,find7a,FIND7,X9006,X9007,X9076,X9077
 
 # inherit from the proprietary version
 -include vendor/oppo/find7/BoardConfigVendor.mk
